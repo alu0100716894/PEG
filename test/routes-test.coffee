@@ -9,5 +9,5 @@ describe "routes", ->
     it "should display index with posts", ->
       res.render = (view, vars) ->
           expect(view).equal "index"
-          expect(vars.title).equal "Analizador Descendente Predictivo Recursivo"
+          expect(vars.title).equal "Analizador Descendente Predictivo Recursivo con PEGjs"
       routes.index(req, res)

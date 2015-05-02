@@ -8,4 +8,4 @@ router.get '/', (req, res, next) ->
   return
 module.exports =
   index: (req, res) ->
-    res.render 'index', { title: 'Analizador Descendente Predictivo Recursivo' }
+    res.render 'index', { title: 'Analizador Descendente Predictivo Recursivo con PEGjs' }
