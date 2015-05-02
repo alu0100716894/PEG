@@ -1,1 +1,1 @@
-web: node bin/www.coffee
+web: node bin/www.js
