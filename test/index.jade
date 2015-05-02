@@ -1,0 +1,30 @@
+doctype html
+html
+head
+    title Mocha
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='mocha.css')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    h1 Analizador descendente predictivo recursivo
+    p
+    | input#files(type='file', x='')
+    div(width='100%')
+    | textarea#INPUT(placeholder='Introduzca el texto o arrastre el archivo que desea analizar.')
+    #botones
+      | input#PARSE.btn.btn-primary(value='Parsear', type='button', role='button')
+      | input#CLEAR.btn.btn-primary(value='Limpiar', type='button', role='button')
+
+    pre#OUTPUT.
+
+    script(src='node_modules/chai/chai.js')
+    #mocha
+    script(src='mocha.js')
+    script(src='blanket.js', data-cover-adapter='mocha-blanket.js')
+    script(src='../main.js', data-cover='')
+    script.
+    |  mocha.setup('tdd')
+    script(src='tests.js')
+    script.
+    |  mocha.run();
