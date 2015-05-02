@@ -10,16 +10,21 @@ h1 {
 th, td, p {
   vertical-align: top;
   text-align: center;
-  padding: 1px 1px; }
+  padding: 1px 1px;
+  color: #FFFFFF; }
 
 input {
   text-align: right;
   border: none;
-  margin: auto; }
+  margin: auto;
+  background-color: #A05B81;
+  color: #FFFFFF; }
   input#files {
     margin-left: 25%;
     font-size: 25%;
-    padding-top: 3%; }
+    padding-top: 3%;
+    background-color: white;
+    color: #A05B81; }
 
 table {
   width: 90%;
@@ -64,8 +69,8 @@ body {
   background-color: white;
   text-align: center;
   font-weight: bold;
-  color: #336936;
-  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace; }
+  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  color: #FFFFFF; }
 
 div#info {
   position: absolute;
@@ -79,10 +84,17 @@ input#files {
 
 table#info {
   border-collapse: separate;
-  border-spacing: 1em; }
+  border-spacing: 1em;
+  text-align: center; }
 
 .btn {
   margin: 1%; }
 
 #PARSE, #CLEAR {
-  font-size: 200%; }
+  font-size: 200%;
+  background-color: #A05B81;
+  color: #FFFFFF; }
+
+letras {
+  font-size: 140%;
+  color: #A05B81; }
