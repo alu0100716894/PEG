@@ -1,15 +1,3 @@
-/*
-	
-	WHITES: /\s+/g,
-      ID: /[a-zA-Z_]\w* /g,
-      NUM: /\b\d+(\.\d*)?([eE][+-]?\d+)?\b/g,
-      STRING: /('(\\.|[^'])*'|"(\\.|[^"])*")/g,
-      ONELINECOMMENT: /\/\/.* /g,
-      MULTIPLELINECOMMENT: /\/[*](.|\n)*?[*]\//g,
-      COMPARISONOPERATOR: /[<>=!]=|[<>]/g,
-      ONECHAROPERATORS: /([-+*\/=()&|;:,{}[\]])/g
-
- */
 start
 	= statements
 statements
@@ -35,23 +23,24 @@ termDiv
 factor
 	= NUM
 	/ ID
-	/ PAR_I expresion PAR_D
+	/ PAR_I left:expresion PAR_D
 
+// Convirtiendo _ en espacios en blanco
 _ = $[ \t\n\r]*
+// Caracteres especiales
 PUNTOYCOMA = _";"_
 IGUAL = _"="_
 P = _"P"_
 IF = _"IF"_
 THEN = _"THEN"_
-
+// Operandos
 MAS = _"+"_
 MENOS = _"-"_
 POR = _"*"_
 DIV = _"/"_
-
 PAR_D = _")"_
 PAR_I = _"("_
-
+// Expresiones con regex
 ID = _ id:$[a-zA-Z_]\w* _ { return id; }
 NUM = _ num:$\b\d+(\.\d*)?([eE][+-]?\d+)?\b _ { return parseInt(num, 10); }
 COMPARISONOPERATOR = comp:$[<>=!]=|[<>] _ { return comp; }
