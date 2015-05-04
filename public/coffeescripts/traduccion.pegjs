@@ -2,6 +2,7 @@ start
 	= statements
 statements
 	= statement PUNTOYCOMA
+	/ // Vacio
 statement
 	= ID IGUAL right:expresion
 	/ P right:expresion
@@ -40,7 +41,18 @@ POR = _"*"_
 DIV = _"/"_
 PAR_D = _")"_
 PAR_I = _"("_
+// Elementos para regex
+SIN_DIGITO = [a-zA-Z_]
+CON_DIGITO = [a-zA-Z_0-9]*
+DIG_CLEENE = [0-9]*
+DIG_POSITIVO = [0-9]+
+PUNTO = [.]
+IZQUIERDA = [<>=!]
+EXPONENTE = [eE][+-]?
+PARTE_A = IZQUIERDA IGUAL
+PARTE_B = [<>]
+
 // Expresiones con regex
-ID = _ id:$[a-zA-Z_]\w* _ { return id; }
-NUM = _ num:$\b\d+(\.\d*)?([eE][+-]?\d+)?\b _ { return parseInt(num, 10); }
-COMPARISONOPERATOR = comp:$[<>=!]=|[<>] _ { return comp; }
+ID = _ id:$SIN_DIGITO CON_DIGITO _ { return id; }
+NUM = _ num:$ DIG_POSITIVO(PUNTO DIG_CLEENE)?(EXPONENTE DIG_POSITIVO)? _ { return parseInt(num, 10); }
+COMPARISONOPERATOR = _ comp:$[PARTE_A PARTE_B] _ { return comp; }
