@@ -1,5 +1,5 @@
 start
-	= statements
+	= stat:statements*
 statements
 	= oper:statement end:PUNTOYCOMA {
 		return "Left: " + oper + "\nRight: " + end;
