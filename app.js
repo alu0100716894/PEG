@@ -66,7 +66,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/', function (request, response) {
-    response.render('index', { title: 'ADPR' });
+    response.render('index', { title: 'ADPR-PEG' });
 });
 
 app.listen(app.get('port'), function () {
