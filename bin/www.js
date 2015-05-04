@@ -36,6 +36,7 @@
    */
 
   port = normalizePort(process.env.PORT || '5000');
+  console.log (port);
 
 
   /**

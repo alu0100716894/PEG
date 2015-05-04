@@ -6,7 +6,7 @@
     var result, source;
     source = INPUT.value;
     try {
-      result = JSON.stringify(parse(source), null, 2);
+      result = peg.parse(source);
     } catch (_error) {
       result = _error;
       result = "<div class=\"error\">" + result + "</div>";
@@ -350,3 +350,4 @@
   window.onload();
 
 }).call(this);
+

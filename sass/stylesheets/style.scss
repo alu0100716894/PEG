@@ -39,7 +39,7 @@ table {
 
 textarea {
   border: 2px solid black;
-  font-size: 30%;
+  font-size: 130%;
   color: black;
   font-family: monospace;
   height: 100px;
@@ -75,7 +75,10 @@ div#botones {
 
 body {
   background-image: url("../images/fondo.jpg");
-  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: white;
   text-align: center;
   font-weight: bold;
