@@ -1,7 +1,5 @@
 start
-	= stat:statements
-statements
-	= oper:statement end:PUNTOYCOMA {
+	= oper:statement end:(PUNTOYCOMA statement ?)* {
 		return {left: oper, right: end};
 	}
 	/ // Vacio
