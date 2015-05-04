@@ -28,12 +28,14 @@ factor
 
 // Convirtiendo _ en espacios en blanco
 _ = $[ \t\n\r]*
+
 // Caracteres especiales
 PUNTOYCOMA = _";"_
 IGUAL = _"="_
 P = _"P"_
 IF = _"IF"_
 THEN = _"THEN"_
+
 // Operandos
 MAS = _"+"_
 MENOS = _"-"_
@@ -41,6 +43,7 @@ POR = _"*"_
 DIV = _"/"_
 PAR_D = _")"_
 PAR_I = _"("_
+
 // Elementos para regex
 SIN_DIGITO = [a-zA-Z_]
 CON_DIGITO = [a-zA-Z_0-9]*
