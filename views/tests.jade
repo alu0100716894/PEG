@@ -1,0 +1,79 @@
+doctype html
+html
+  head
+    title Predictive Recursive Descent Parser
+    meta(charset='utf-8')
+    |         
+    link(href='/stylesheets/style.css', media='screen, projection', rel='stylesheet') 
+    style.
+      div.hiddenTestElements {
+      display: none;
+      }
+    |     
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    link(rel='stylesheet', href='/tests/mocha.css')
+    |     
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    |     
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js')
+  |   
+  body
+      header
+      h1 Predictive Recursive Descent Parser
+      nav
+        ul
+          li
+            a(href='/grammar', title='Grammar') Grammar
+          li
+            a(href='/', title='Home') Home
+          li
+            a.current(href='./test', title='Tests del analizador') Tests
+          li
+            a(href='https://github.com/alu0100204148/lp0', title='Repo') Repo
+          li
+            a(href='http://en.wikipedia.org/wiki/Recursive_descent_parser', title='Wikipedia') Wikipedia
+          li
+            a(href='http://jade-lang.com//', title='Slim') Jade
+          li
+            a(href='http://sass-lang.com/', title='Sass') Sass
+          li
+            a(href='http://coffeescript.org/', title='Coffeescript') CoffeeScript
+          li
+            a(href='http://crguezl.github.io/pl-html/', title='PLGH') PL-GH
+          li
+            a(href='http://docs.mathjax.org/en/latest/start.html', title='MathJax') MathJax
+    section
+      #header.header
+  
+    #mocha
+    |     
+    .hiddenTestElements
+      textarea#original(autofocus='', cols='80', rows='5')
+      | &#x9;&#x9;  
+      button#PARSE.mylink(type='button', value='parse') Parse
+      br
+      |       &#x9;  
+      pre#OUTPUT.
+        
+    |     
+    script(src='/tests/chai.js')
+    |     
+    script(src='/tests/mocha.js')
+    |     
+    script(src='/tests/sinon-1.13.0.js')
+    |     
+    script(src='/tests/blanket.js', data-cover-adapter='/tests/mocha-blanket.js')
+    |     
+    script.
+      mocha.setup('tdd')
+    |     
+    script(src='js/pl0.js', data-cover='')
+    script(src='js/main.js', data-cover='')
+    |     
+    script(src='./views/tests.js')
+    |     
+    script.
+      mocha.run();
